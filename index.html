@@ -20,7 +20,8 @@
       <a href="#wall">All work</a>
       <a href="#about" data-show="about">About</a>
     </nav>
-    <button class="tune-btn" id="tuneBtn" type="button" aria-expanded="false" aria-controls="tune">Customize</button>
+    <a class="studio-link" id="studioLink" href="studio/" hidden>Studio</a>
+    <button class="tune-btn" id="tuneBtn" type="button" aria-expanded="false" aria-controls="tune" hidden>Customize</button>
   </div>
 </header>
 
@@ -146,9 +147,10 @@
 
     <fieldset>
       <legend>Save</legend>
-      <p class="hint">Changes are kept in this browser only. To make them live for everyone, copy the settings and paste them into content/site.json.</p>
+      <p class="hint">Changes show only in this browser until you publish them.</p>
       <div class="row">
-        <button type="button" class="small-btn solid" id="tCopy">Copy settings</button>
+        <button type="button" class="small-btn solid" id="tPublish" hidden>Publish to site</button>
+        <button type="button" class="small-btn" id="tCopy">Copy settings</button>
         <button type="button" class="small-btn" id="tReset">Reset</button>
       </div>
       <textarea id="tJson" rows="6" readonly aria-label="Settings JSON"></textarea>

@@ -648,6 +648,46 @@
     toast('Back to the settings in site.json');
   });
 
+  // Owner tools: Customize and Publish appear only in a browser signed in to Studio (or with ?edit in the address).
+  let studioToken = null;
+  try { studioToken = localStorage.getItem('studio-token'); } catch { /* storage blocked */ }
+  $('#tuneBtn').hidden = !(studioToken || new URLSearchParams(location.search).has('edit'));
+  $('#studioLink').hidden = !studioToken;
+  $('#tPublish').hidden = !studioToken;
+
+  $('#tPublish').addEventListener('click', async () => {
+    const btn = $('#tPublish');
+    btn.disabled = true;
+    btn.textContent = 'Publishing…';
+    const api = 'https://api.github.com/repos/saikiran9185/saikiran9185.github.io/contents/content/site.json';
+    const headers = { Authorization: `Bearer ${studioToken}`, Accept: 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' };
+    try {
+      const res = await fetch(`${api}?ref=main`, { headers, cache: 'no-store' });
+      if (!res.ok) throw new Error(`GitHub said ${res.status}`);
+      const cur = await res.json();
+      const json = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(cur.content.replace(/\s/g, '')), (ch) => ch.charCodeAt(0))));
+      json.site = DATA.site;
+      json.theme = DATA.theme;
+      const bytes = new TextEncoder().encode(`${JSON.stringify(json, null, 2)}\n`);
+      let bin = '';
+      for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+      const put = await fetch(api, {
+        method: 'PUT',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Studio: site settings from Customize', content: btoa(bin), sha: cur.sha, branch: 'main' }),
+      });
+      if (!put.ok) throw new Error(`GitHub said ${put.status}`);
+      BASE.site = clone(DATA.site);
+      BASE.theme = clone(DATA.theme);
+      try { localStorage.removeItem(STORE); } catch { /* storage blocked */ }
+      toast('Published. Everyone sees it in a minute or two.');
+    } catch (err) {
+      toast(`Could not publish: ${err.message}. Try signing in to Studio again.`);
+    }
+    btn.disabled = false;
+    btn.textContent = 'Publish to site';
+  });
+
   $('#copyEmail').addEventListener('click', () => {
     navigator.clipboard.writeText(DATA.site.email).then(
       () => toast('Email copied'),
