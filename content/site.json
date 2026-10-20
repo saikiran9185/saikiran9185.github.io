@@ -79,43 +79,6 @@
   ],
   "projects": [
     {
-      "id": "studio-test",
-      "title": "Studio Test",
-      "year": 2026,
-      "cats": [
-        "Tools"
-      ],
-      "one": "Test post from Studio.",
-      "role": "",
-      "tools": "",
-      "links": [],
-      "tiles": [
-        {
-          "type": "image",
-          "src": "media/studio-test/beads-g2skpw.jpg",
-          "w": 960,
-          "h": 540,
-          "caption": "beads"
-        }
-      ],
-      "blocks": [
-        {
-          "type": "text",
-          "title": "About this project",
-          "body": ""
-        },
-        {
-          "type": "stats",
-          "items": [
-            {
-              "n": 0,
-              "label": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "dielineforge",
       "title": "DielineForge",
       "year": 2026,
