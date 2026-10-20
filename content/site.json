@@ -1,0 +1,911 @@
+{
+  "site": {
+    "name": "Saikiran Chepuri",
+    "headline": "I make 3D and motion work, Telugu type, packaging, and the tools I need to make them.",
+    "intro": "B.Design student in New Delhi. Most of my tools are open source.",
+    "bestTitle": "Best work",
+    "wallTitle": "All work",
+    "aboutTitle": "About",
+    "about": "I work across 3D and motion, type and packaging. When the tool I need doesn't exist, I build it, then I share it so other designers can use it too.",
+    "email": "saikiran9185@gmail.com",
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/saikiran9185"
+      }
+    ],
+    "skills": [
+      "Blender",
+      "After Effects",
+      "Illustrator",
+      "Figma",
+      "TouchDesigner",
+      "Swift",
+      "Python",
+      "TypeScript"
+    ]
+  },
+  "theme": {
+    "mode": "system",
+    "colors": {
+      "light": {
+        "bg": "#EEEFEC",
+        "fg": "#16171A",
+        "muted": "#62666D",
+        "line": "#D5D7D2",
+        "tile": "#E1E3DE",
+        "accent": "#C8006E"
+      },
+      "dark": {
+        "bg": "#0F1012",
+        "fg": "#ECEDEA",
+        "muted": "#979BA2",
+        "line": "#2A2C30",
+        "tile": "#1C1D20",
+        "accent": "#FF4FA8"
+      }
+    },
+    "fonts": {
+      "display": "Anybody",
+      "body": "Hanken Grotesk"
+    },
+    "titleScale": 1,
+    "wall": {
+      "columns": "auto",
+      "gap": 10,
+      "radius": 6,
+      "captions": "hover",
+      "hover": "lift"
+    },
+    "show": {
+      "best": true,
+      "about": true
+    }
+  },
+  "categories": [
+    "3D & Motion",
+    "Type",
+    "Packaging",
+    "UX",
+    "Identity",
+    "Tools"
+  ],
+  "best": [
+    "dielineforge",
+    "pramaan",
+    "synesthesia",
+    "telugu-type",
+    "filter-nodes"
+  ],
+  "projects": [
+    {
+      "id": "dielineforge",
+      "title": "DielineForge",
+      "year": 2026,
+      "cats": [
+        "Packaging",
+        "Tools"
+      ],
+      "one": "Drop in a 3D package model, get a print-ready 1:1 dieline.",
+      "role": "Design and build",
+      "tools": "Blender (headless), Python",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/saikiran9185/dielineforge"
+        },
+        {
+          "label": "Download page",
+          "url": "https://saikiran9185.github.io/dielineforge"
+        }
+      ],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/dielineforge/carton.png",
+          "w": 1074,
+          "h": 1100,
+          "bg": "#FFFFFF",
+          "caption": "Carton dieline"
+        },
+        {
+          "type": "image",
+          "src": "media/dielineforge/app.jpg",
+          "w": 1400,
+          "h": 1045,
+          "caption": "Drop page"
+        },
+        {
+          "type": "image",
+          "src": "media/dielineforge/hex.png",
+          "w": 994,
+          "h": 1000,
+          "bg": "#FFFFFF",
+          "caption": "Hex box"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Why I built it",
+          "body": "Every Packaging Design assignment starts with a dieline. Drawing each net by hand from a 3D model was slow and easy to get wrong, so I built a tool that unfolds the model for me."
+        },
+        {
+          "type": "image",
+          "src": "media/dielineforge/app.jpg",
+          "w": 1400,
+          "h": 1045,
+          "caption": "The drop page: model in, dieline out."
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 8,
+              "label": "3D file formats it reads"
+            },
+            {
+              "n": 7,
+              "label": "dieline layers"
+            },
+            {
+              "n": 0,
+              "label": "cloud services needed"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "How it works",
+          "body": "Blender runs in the background and unfolds the model with its Paper Model extension. The output is a layered SVG and PDF at 1:1, with cut, mountain crease, valley crease, glue, bleed and registration on separate layers."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/dielineforge/carton.png",
+              "w": 1074,
+              "h": 1100,
+              "bg": "#FFFFFF",
+              "caption": "Carton"
+            },
+            {
+              "src": "media/dielineforge/hex.png",
+              "w": 994,
+              "h": 1000,
+              "bg": "#FFFFFF",
+              "caption": "Hex box"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pramaan",
+      "title": "Pramaan",
+      "year": 2026,
+      "cats": [
+        "UX"
+      ],
+      "one": "Proof you can keep: verifying genuine Bidriware for artisans, sellers and buyers.",
+      "role": "UX and UI design",
+      "tools": "Illustrator, ExtendScript",
+      "style": {
+        "display": "Instrument Serif",
+        "bg": "#ECECEC",
+        "fg": "#1E0E3E",
+        "muted": "#5B5470",
+        "line": "#CACAD0",
+        "accent": "#433270",
+        "weight": 400
+      },
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/pramaan/cover.jpg",
+          "w": 1440,
+          "h": 1125,
+          "caption": "Cover"
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/b2-hi.jpg",
+          "w": 665,
+          "h": 1440,
+          "caption": "Scan the piece"
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/personas.jpg",
+          "w": 1440,
+          "h": 1125,
+          "caption": "Personas"
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/b4-genuine.jpg",
+          "w": 665,
+          "h": 1440,
+          "caption": "Genuine"
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/s3-hi.jpg",
+          "w": 1440,
+          "h": 900,
+          "caption": "Multi-angle scan"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "quote",
+          "text": "How might we let any buyer verify a Bidri piece and own proof of its authenticity, while protecting the artisans who make it?"
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 53,
+              "label": "artboards"
+            },
+            {
+              "n": 24,
+              "label": "screens, in lo-fi and hi-fi"
+            },
+            {
+              "n": 3,
+              "label": "user journeys"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/personas.jpg",
+          "w": 1440,
+          "h": 1125,
+          "caption": "Three people, three journeys."
+        },
+        {
+          "type": "compare",
+          "a": "media/pramaan/b2-lo.jpg",
+          "b": "media/pramaan/b2-hi.jpg",
+          "w": 665,
+          "h": 1440,
+          "la": "Lo-fi",
+          "lb": "Hi-fi",
+          "caption": "Buyer B2, Scan the piece. Drag to compare."
+        },
+        {
+          "type": "text",
+          "title": "Three journeys",
+          "body": "Artisans record each piece and hand it over. Sellers register stock, print an ID and QR sticker, and watch for flags. Buyers scan a piece, see whether it is genuine, claim it, and get a certificate they can pass on."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/pramaan/a2-verify.jpg",
+              "w": 665,
+              "h": 1440,
+              "caption": "A2 GI verification"
+            },
+            {
+              "src": "media/pramaan/a3-home.jpg",
+              "w": 665,
+              "h": 1440,
+              "caption": "A3 Home"
+            },
+            {
+              "src": "media/pramaan/b2-hi.jpg",
+              "w": 665,
+              "h": 1440,
+              "caption": "B2 Scan"
+            },
+            {
+              "src": "media/pramaan/b4-genuine.jpg",
+              "w": 665,
+              "h": 1440,
+              "caption": "B4 Genuine"
+            },
+            {
+              "src": "media/pramaan/b6-certificate.jpg",
+              "w": 665,
+              "h": 1440,
+              "caption": "B6 Certificate"
+            }
+          ]
+        },
+        {
+          "type": "compare",
+          "a": "media/pramaan/s3-lo.jpg",
+          "b": "media/pramaan/s3-hi.jpg",
+          "w": 1440,
+          "h": 900,
+          "la": "Lo-fi",
+          "lb": "Hi-fi",
+          "caption": "Seller S3, Multi-angle scan."
+        },
+        {
+          "type": "image",
+          "src": "media/pramaan/flows.jpg",
+          "w": 1440,
+          "h": 1125,
+          "caption": "User flows."
+        },
+        {
+          "type": "figma",
+          "url": "",
+          "caption": "Clickable prototype. Paste the Figma share link in site.json and it plays here."
+        },
+        {
+          "type": "text",
+          "title": "Built with scripts",
+          "body": "All 53 artboards are generated by ExtendScript. One file holds the tokens, one the components and Bidri motifs, and one each journey. Changing a token rebuilds every screen in both fidelities."
+        }
+      ]
+    },
+    {
+      "id": "synesthesia",
+      "title": "Synesthesia 3.0",
+      "year": 2026,
+      "cats": [
+        "Identity"
+      ],
+      "one": "Identity and print for the USDI design fest. I was Visual Head.",
+      "role": "Visual Head",
+      "tools": "Illustrator, Figma, After Effects",
+      "style": {
+        "display": "Jersey 10",
+        "bg": "#0D0D0F",
+        "fg": "#F1F1EE",
+        "muted": "#9C9CA3",
+        "line": "#2A2A2E",
+        "accent": "#9BEA1F",
+        "weight": 400
+      },
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/synesthesia/poster.jpg",
+          "w": 919,
+          "h": 1300,
+          "caption": "Fest poster"
+        },
+        {
+          "type": "image",
+          "src": "media/synesthesia/wordmark.png",
+          "w": 1800,
+          "h": 556,
+          "bg": "#111113",
+          "caption": "Wordmark"
+        },
+        {
+          "type": "image",
+          "src": "media/synesthesia/banner.jpg",
+          "w": 1800,
+          "h": 1012,
+          "caption": "Event banner"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "The fest",
+          "body": "Synesthesia is the design fest of the University School of Design and Innovation, held on 21 and 22 October 2026 under the line Feel the Unseen. As Visual Head I led the identity and the printed and digital pieces with the visual team."
+        },
+        {
+          "type": "image",
+          "src": "media/synesthesia/poster.jpg",
+          "w": 919,
+          "h": 1300,
+          "caption": "Main poster."
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 6,
+              "label": "events"
+            },
+            {
+              "n": 118,
+              "label": "deliverables tracked"
+            },
+            {
+              "n": 2,
+              "label": "days"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "media/synesthesia/banner.jpg",
+          "w": 1800,
+          "h": 1012,
+          "caption": "Glass Workshop banner."
+        },
+        {
+          "type": "image",
+          "src": "media/synesthesia/wordmark.png",
+          "w": 1800,
+          "h": 556,
+          "bg": "#111113",
+          "caption": "Wordmark."
+        },
+        {
+          "type": "text",
+          "title": "What we made",
+          "body": "Posters, event banners, certificates, an A4 sticker sheet, merch, a promo teaser, and a sound-reactive logo studio that turns any video into GIFs, stickers and display pictures."
+        }
+      ]
+    },
+    {
+      "id": "telugu-type",
+      "title": "A Helvetica for Telugu",
+      "year": 2026,
+      "cats": [
+        "Type"
+      ],
+      "one": "Typeface research for Telugu on signs, stations and roads.",
+      "role": "Type design and research",
+      "tools": "Paper with Nanki Nath",
+      "tiles": [
+        {
+          "type": "text",
+          "text": "తెలుగు",
+          "fonts": [
+            "Noto Sans Telugu",
+            "Ramaraja",
+            "Suravaram",
+            "Gidugu",
+            "Tenali Ramakrishna"
+          ],
+          "w": 4,
+          "h": 5,
+          "bg": "#123A6B",
+          "fg": "#F3F1EA",
+          "caption": "Live type"
+        },
+        {
+          "type": "text",
+          "text": "సికింద్రాబాద్",
+          "sub": "Secunderabad",
+          "fonts": [
+            "Noto Sans Telugu"
+          ],
+          "w": 16,
+          "h": 9,
+          "bg": "#0B5D3B",
+          "fg": "#FFFFFF",
+          "caption": "Sign test"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "The question",
+          "body": "Telugu appears on metro, bus and road signs across Andhra Pradesh and Telangana, where it has to be read fast and from far away. My design project asks what an engineered, neutral Telugu typeface for public infrastructure would look like."
+        },
+        {
+          "type": "tester",
+          "text": "సికింద్రాబాద్ జంక్షన్",
+          "fonts": [
+            "Noto Sans Telugu",
+            "Ramaraja",
+            "Suravaram",
+            "Gidugu",
+            "Tenali Ramakrishna"
+          ],
+          "caption": "Sample fonts from Google Fonts. My typeface goes here once the font file is added."
+        },
+        {
+          "type": "text",
+          "title": "Paper",
+          "body": "Reframing the Grid: Practice-Based Letterform Development for Telugu Public Infrastructure. Written with Nanki Nath for the SADEA Angan Symposium 2026."
+        }
+      ]
+    },
+    {
+      "id": "filter-nodes",
+      "title": "Filter Nodes",
+      "year": 2026,
+      "cats": [
+        "3D & Motion",
+        "Tools"
+      ],
+      "one": "Twenty-two stylize effects as drop-in Blender compositor nodes.",
+      "role": "Design and build",
+      "tools": "Blender 5.2, Python",
+      "tiles": [
+        {
+          "type": "video",
+          "src": "media/filter-nodes/reel.mp4",
+          "poster": "media/filter-nodes/reel-poster.jpg",
+          "w": 16,
+          "h": 9,
+          "caption": "Effects reel"
+        },
+        {
+          "type": "image",
+          "src": "media/filter-nodes/grid.jpg",
+          "w": 1600,
+          "h": 913,
+          "caption": "Effect grid"
+        },
+        {
+          "type": "image",
+          "src": "media/filter-nodes/dither_game_boy.jpg",
+          "w": 960,
+          "h": 540,
+          "caption": "Dither"
+        },
+        {
+          "type": "image",
+          "src": "media/filter-nodes/iridescent_soap_bubble.jpg",
+          "w": 960,
+          "h": 540,
+          "caption": "Iridescent"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "video",
+          "src": "media/filter-nodes/reel.mp4",
+          "poster": "media/filter-nodes/reel-poster.jpg",
+          "w": 16,
+          "h": 9,
+          "caption": "Six of the effects on the same test scene."
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 22,
+              "label": "effects"
+            },
+            {
+              "n": 91,
+              "label": "presets"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Why",
+          "body": "I wanted looks like halftone, knit, CRT and gold foil one click away inside Blender, for my motion work. Each effect is a node group with presets, a mix control and a mask input."
+        },
+        {
+          "type": "switcher",
+          "w": 960,
+          "h": 540,
+          "items": [
+            {
+              "src": "media/filter-nodes/halftone_cmyk.jpg",
+              "label": "Halftone CMYK"
+            },
+            {
+              "src": "media/filter-nodes/ascii.jpg",
+              "label": "ASCII"
+            },
+            {
+              "src": "media/filter-nodes/knit_christmas_sweater.jpg",
+              "label": "Knit"
+            },
+            {
+              "src": "media/filter-nodes/crt.jpg",
+              "label": "CRT"
+            },
+            {
+              "src": "media/filter-nodes/beads.jpg",
+              "label": "Beads"
+            },
+            {
+              "src": "media/filter-nodes/gold_foil.jpg",
+              "label": "Gold foil"
+            },
+            {
+              "src": "media/filter-nodes/fluted_glass.jpg",
+              "label": "Fluted glass"
+            },
+            {
+              "src": "media/filter-nodes/stipple.jpg",
+              "label": "Stipple"
+            }
+          ],
+          "caption": "Pick an effect."
+        },
+        {
+          "type": "image",
+          "src": "media/filter-nodes/blender-ui.jpg",
+          "w": 1400,
+          "h": 906,
+          "caption": "In Blender's compositor."
+        }
+      ]
+    },
+    {
+      "id": "glassforge",
+      "title": "GlassForge",
+      "year": 2026,
+      "cats": [
+        "Tools"
+      ],
+      "one": "Glass textures and glass objects for Photoshop, made in the browser.",
+      "role": "Design and build",
+      "tools": "TypeScript, WebGL2",
+      "links": [
+        {
+          "label": "Open the tool",
+          "url": "https://saikiran9185.github.io/glassforge/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/saikiran9185/glassforge"
+        }
+      ],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/glassforge/object.jpg",
+          "w": 1400,
+          "h": 840,
+          "caption": "Glass object"
+        },
+        {
+          "type": "image",
+          "src": "media/glassforge/text.jpg",
+          "w": 1400,
+          "h": 840,
+          "caption": "Glass type"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "What it does",
+          "body": "GlassForge makes seamless black and white height maps for Photoshop's Glass filter and exports them as PSD. A second mode builds glass objects, such as pills, circles or typed text with thickness, that refract a backdrop."
+        },
+        {
+          "type": "image",
+          "src": "media/glassforge/app.jpg",
+          "w": 1400,
+          "h": 840,
+          "caption": "Texture mode."
+        },
+        {
+          "type": "image",
+          "src": "media/glassforge/text.jpg",
+          "w": 1400,
+          "h": 840,
+          "caption": "Glass type over a backdrop."
+        }
+      ]
+    },
+    {
+      "id": "jbl-control",
+      "title": "JBL Control",
+      "year": 2026,
+      "cats": [
+        "Tools"
+      ],
+      "one": "Noise-cancelling controls for JBL headphones in the Mac menu bar.",
+      "role": "Design and build",
+      "tools": "Swift, SwiftUI",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/saikiran9185/JBLControl"
+        }
+      ],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/jbl-control/menubar.jpg",
+          "w": 1800,
+          "h": 520,
+          "caption": "Menu bar"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "The problem",
+          "body": "The JBL Headphones app does not run on Apple silicon Macs, so switching noise cancelling meant picking up an iPad."
+        },
+        {
+          "type": "image",
+          "src": "media/jbl-control/menubar.jpg",
+          "w": 1800,
+          "h": 520,
+          "caption": "Noise cancelling, ambient, talk-through and off."
+        },
+        {
+          "type": "text",
+          "title": "How",
+          "body": "The headphones use an Airoha chip that speaks the RACE protocol over a Bluetooth serial channel. I decoded the mode commands and built a menu-bar app around them, with URL shortcuts for automation."
+        }
+      ]
+    },
+    {
+      "id": "teleprompter",
+      "title": "Teleprompter",
+      "year": 2026,
+      "cats": [
+        "Tools"
+      ],
+      "one": "A Mac teleprompter that follows your voice and records clean voice-over takes.",
+      "role": "Design and build",
+      "tools": "Swift, SwiftUI, Speech",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/saikiran9185/teleprompter"
+        }
+      ],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/teleprompter/app.jpg",
+          "w": 1000,
+          "h": 678,
+          "caption": "Recording view"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Why",
+          "body": "I built it from the voice-over studio I made for a reel, so I could reuse it. It follows your voice word by word, records each line as a separate take, and checks every take against the script."
+        },
+        {
+          "type": "image",
+          "src": "media/teleprompter/app.jpg",
+          "w": 1000,
+          "h": 678,
+          "caption": "The yellow word follows your voice."
+        }
+      ]
+    },
+    {
+      "id": "telugu-affinity",
+      "title": "Telugu in Affinity",
+      "year": 2026,
+      "cats": [
+        "Type",
+        "Tools"
+      ],
+      "one": "Makes Telugu text shape correctly in Affinity apps, and stay editable.",
+      "role": "Research and build",
+      "tools": "Python, OpenType",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/saikiran9185/telugu-affinity"
+        }
+      ],
+      "tiles": [
+        {
+          "type": "text",
+          "text": "స్త్రీ శ్రీ క్ష",
+          "fonts": [
+            "Ramaraja",
+            "Noto Sans Telugu",
+            "Suravaram"
+          ],
+          "w": 1,
+          "h": 1,
+          "bg": "#E6EAF0",
+          "fg": "#1A1D24",
+          "caption": "Conjuncts"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "The problem",
+          "body": "Affinity Designer, Photo and Publisher have no Indic shaping, so Telugu conjuncts and vowel signs come out broken. Illustrator gets them right."
+        },
+        {
+          "type": "text",
+          "title": "The fix",
+          "body": "A script rewrites a Telugu font's OpenType rules so Affinity's generic shaper gives the same result as a proper Indic shaper. Nothing is outlined, so the text stays editable."
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 20142,
+              "label": "letter clusters checked for Ramabhadra, all correct"
+            },
+            {
+              "n": 8,
+              "label": "fonts fully supported"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fxhub",
+      "title": "FXHub",
+      "year": 2026,
+      "cats": [
+        "3D & Motion",
+        "Tools"
+      ],
+      "one": "Save, copy and paste Blender node effects with their presets.",
+      "role": "Design and build",
+      "tools": "Blender, Python",
+      "status": "In progress",
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/fxhub/halftone.jpg",
+          "w": 512,
+          "h": 512,
+          "caption": "Halftone shader"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "Idea",
+          "body": "Effects like halftone should be one click in Blender, and easy to share with other designers. FXHub saves a node effect with its presets as one file you can copy and paste."
+        },
+        {
+          "type": "image",
+          "src": "media/fxhub/halftone.jpg",
+          "w": 512,
+          "h": 512,
+          "caption": "Halftone shader preset."
+        }
+      ]
+    },
+    {
+      "id": "wastewise",
+      "title": "WasteWise",
+      "year": 2026,
+      "cats": [
+        "UX"
+      ],
+      "one": "Point a camera at waste and find out which Delhi bin it belongs in.",
+      "role": "Design and build",
+      "tools": "On-device AI, JavaScript",
+      "tiles": [
+        {
+          "type": "text",
+          "text": "Which bin?",
+          "sub": "Wet · Dry · Sanitary · Special care",
+          "fonts": [
+            "Anybody"
+          ],
+          "w": 4,
+          "h": 3,
+          "bg": "#1F5C3A",
+          "fg": "#F2F5EE",
+          "caption": "Waste ID"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "What it does",
+          "body": "Take a photo and a model running in the browser names the item. The site then explains which of the four waste streams in the 2026 Solid Waste Management Rules it belongs to, and where to drop it in Delhi."
+        },
+        {
+          "type": "stats",
+          "items": [
+            {
+              "n": 4,
+              "label": "waste streams"
+            },
+            {
+              "n": 78,
+              "label": "drop-off points mapped"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
