@@ -64,6 +64,7 @@
   },
   "categories": [
     "3D & Motion",
+    "Photography",
     "Type",
     "Packaging",
     "UX",
@@ -902,6 +903,1457 @@
             {
               "n": 78,
               "label": "drop-off points mapped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-early-frames",
+      "title": "Early Frames",
+      "year": 2022,
+      "cats": [
+        "Photography"
+      ],
+      "one": "First photographs: quiet mornings, water and city light, 2022–24.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-early-frames/01.jpg",
+          "w": 1436,
+          "h": 1436,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-early-frames/02.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Hyderabad metro"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-early-frames/01.jpg",
+              "w": 1436,
+              "h": 1436
+            },
+            {
+              "src": "media/ig-early-frames/02.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-frames/03.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-frames/04.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-frames/05.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-frames/06.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-frames/07.jpg",
+              "w": 1440,
+              "h": 1440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-one-day",
+      "title": "One Day Wasted Successfully",
+      "year": 2024,
+      "cats": [
+        "Photography"
+      ],
+      "one": "One Day Wasted Successfully",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-one-day/01.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-one-day/02.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "One Day Wasted Successfully"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-one-day/01.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-one-day/02.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-one-day/03.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-one-day/04.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-one-day/05.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-one-day/06.jpg",
+              "w": 1440,
+              "h": 1440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-chandni-chowk-2024",
+      "title": "Moments from the Heart of Delhi",
+      "year": 2024,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Moments from the Heart of Delhi ❤️",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-chandni-chowk-2024/01.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-chandni-chowk-2024/02.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Moments from the Heart of Delhi ❤️"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-chandni-chowk-2024/01.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-chandni-chowk-2024/02.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-chandni-chowk-2024/03.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-chandni-chowk-2024/04.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-chandni-chowk-2024/05.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-chandni-chowk-2024/06.jpg",
+              "w": 1440,
+              "h": 1440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-christmas",
+      "title": "Merry Christmas",
+      "year": 2024,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Merry Christmas 🎁",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-christmas/01.jpg",
+          "w": 1440,
+          "h": 1512,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-christmas/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Merry Christmas 🎁"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-christmas/01.jpg",
+              "w": 1440,
+              "h": 1512
+            },
+            {
+              "src": "media/ig-christmas/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-christmas/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-christmas/04.jpg",
+              "w": 1436,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-christmas/05.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-ekadashi",
+      "title": "Vaikuntha Ekadashi at Home",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Vaikuntha Ekadashi At Home",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-ekadashi/01.jpg",
+          "w": 1080,
+          "h": 1080,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-ekadashi/02.jpg",
+          "w": 1080,
+          "h": 1080,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Vaikuntha Ekadashi At Home"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-ekadashi/01.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-ekadashi/02.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-ekadashi/03.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-ekadashi/04.jpg",
+              "w": 1080,
+              "h": 1080
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-flowers",
+      "title": "Flowers from my Home",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Flowers from my Home",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-flowers/01.jpg",
+          "w": 1440,
+          "h": 1439,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-flowers/02.jpg",
+          "w": 1440,
+          "h": 1439,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Flowers from my Home"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-flowers/01.jpg",
+              "w": 1440,
+              "h": 1439
+            },
+            {
+              "src": "media/ig-flowers/02.jpg",
+              "w": 1440,
+              "h": 1439
+            },
+            {
+              "src": "media/ig-flowers/03.jpg",
+              "w": 1440,
+              "h": 1439
+            },
+            {
+              "src": "media/ig-flowers/04.jpg",
+              "w": 1440,
+              "h": 1439
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-art-fair",
+      "title": "India Art Fair 2025",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Framing the unseen, capturing the in-between.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-art-fair/01.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-art-fair/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Framing the unseen, capturing the in-between. 🚗🎭"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-art-fair/01.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/04.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/05.jpg",
+              "w": 1281,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/06.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/07.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/08.jpg",
+              "w": 1281,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/09.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/10.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/11.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/12.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/13.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/14.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/15.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/16.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/17.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/18.jpg",
+              "w": 1281,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-art-fair/19.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-midnight-warden",
+      "title": "Midnight Warden",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Mid night warden photoshoot result",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-midnight-warden/01.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-midnight-warden/02.jpg",
+          "w": 1440,
+          "h": 1440,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Mid night warden photoshoot result"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-midnight-warden/01.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-midnight-warden/02.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-midnight-warden/03.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-midnight-warden/04.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-midnight-warden/05.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-midnight-warden/06.jpg",
+              "w": 1440,
+              "h": 1440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-portraits-2025",
+      "title": "Portraits",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Faces and stalls, photographed in early 2025.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-portraits-2025/01.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-portraits-2025/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "I totally forgot to post it . so it's a random post for today ."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-portraits-2025/01.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-portraits-2025/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-portraits-2025/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-portraits-2025/04.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-portraits-2025/05.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-portraits-2025/06.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-rain-check",
+      "title": "Rain Check Vibes",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Rain Check Vibes Photographers ,",
+      "role": "Photography (with Kalpit Tyagi)",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-rain-check/01.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-rain-check/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Rain Check Vibes\nPhotographers ,"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-rain-check/01.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/04.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/05.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/06.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-rain-check/07.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-lodhi",
+      "title": "Lodhi Art District",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "🎨✨ Wandered through colors and stories at Lodhi Art District – Delhi’s most Instagrammable gem!",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-lodhi/01.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-lodhi/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "🎨✨ Wandered through colors and stories at Lodhi Art District – Delhi’s most Instagrammable gem!\nEvery wall here speaks a different language, and I couldn’t resist capturing it through my lens. 📸💥\nSwipe through my favorite shots and let me know which one speaks to you the most! 🧡"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-lodhi/01.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/04.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/05.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/06.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/07.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/08.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-lodhi/09.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-history-whispers",
+      "title": "Where History Whispers",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Where history whispers through arches and Delhi’s soul shines in every detail.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-history-whispers/01.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-history-whispers/02.jpg",
+          "w": 1280,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Where history whispers through arches and Delhi’s soul shines in every detail."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-history-whispers/01.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/02.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/03.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/04.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/05.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/06.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-history-whispers/07.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-blood-moon",
+      "title": "7·9·25 — Blood Moon",
+      "year": 2025,
+      "cats": [
+        "Photography"
+      ],
+      "one": "7•9•25 — the night the sky turned into a canvas of fire.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-blood-moon/01.jpg",
+          "w": 1600,
+          "h": 900,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-blood-moon/02.jpg",
+          "w": 1600,
+          "h": 900,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "7•9•25 — the night the sky turned into a canvas of fire. 🔥🌌"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-blood-moon/01.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/ig-blood-moon/02.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/ig-blood-moon/03.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/ig-blood-moon/04.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/ig-blood-moon/05.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-republic-day",
+      "title": "Republic Day Rehearsals",
+      "year": 2026,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Amid the early morning rehearsals, the streets come alive with discipline, rhythm, and pride.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-republic-day/01.jpg",
+          "w": 1080,
+          "h": 1350,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-republic-day/02.jpg",
+          "w": 1080,
+          "h": 1350,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Amid the early morning rehearsals, the streets come alive with discipline, rhythm, and pride.\nHands firmly holding instruments, hearts beating for the nation 🇮🇳\nThese moments from the Republic Day rehearsals reflect the spirit of unity, sacrifice, and dedication that defines India.\nNot a parade yet—but every step already carries history."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-republic-day/01.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/02.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/03.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/04.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/05.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/06.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/07.jpg",
+              "w": 1080,
+              "h": 1350
+            },
+            {
+              "src": "media/ig-republic-day/08.jpg",
+              "w": 1080,
+              "h": 1350
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-red",
+      "title": "Red — Chandni Chowk",
+      "year": 2026,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Red tones, old lanes, endless stories.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-red/01.jpg",
+          "w": 1188,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-red/02.jpg",
+          "w": 1188,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Red tones, old lanes, endless stories.\nChandni Chowk is breathing in motion."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-red/01.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/02.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/03.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/04.jpg",
+              "w": 1187,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/05.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/06.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/07.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/08.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/09.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/10.jpg",
+              "w": 1188,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/11.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/12.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/13.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/14.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/15.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/16.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-red/17.jpg",
+              "w": 1280,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-home-2026",
+      "title": "Home",
+      "year": 2026,
+      "cats": [
+        "Photography"
+      ],
+      "one": "Night streets, a temple gopuram and flowers from home.",
+      "role": "Photography",
+      "tools": "Canon EOS M50, Lightroom",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-home-2026/01.jpg",
+          "w": 1199,
+          "h": 1600,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-home-2026/02.jpg",
+          "w": 1200,
+          "h": 1600,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "From the post",
+          "body": "Home"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-home-2026/01.jpg",
+              "w": 1199,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/02.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/03.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/04.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/05.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/06.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/07.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/08.jpg",
+              "w": 1200,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-home-2026/09.jpg",
+              "w": 1200,
+              "h": 1600
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ig-early-design",
+      "title": "Early Graphic Design",
+      "year": 2021,
+      "cats": [
+        "Identity"
+      ],
+      "one": "Logos, visiting cards, posters and social graphics I made and posted between 2021 and 2025.",
+      "role": "Graphic design",
+      "tools": "Photoshop, Illustrator",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/saikiran_chepuri/"
+        }
+      ],
+      "tiles": [
+        {
+          "src": "media/ig-early-design/01.jpg",
+          "w": 1080,
+          "h": 1080,
+          "type": "image"
+        },
+        {
+          "src": "media/ig-early-design/02.jpg",
+          "w": 1080,
+          "h": 1080,
+          "type": "image"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/ig-early-design/01.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/02.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/03.jpg",
+              "w": 959,
+              "h": 959
+            },
+            {
+              "src": "media/ig-early-design/04.jpg",
+              "w": 959,
+              "h": 959
+            },
+            {
+              "src": "media/ig-early-design/05.jpg",
+              "w": 720,
+              "h": 720
+            },
+            {
+              "src": "media/ig-early-design/06.jpg",
+              "w": 1080,
+              "h": 834
+            },
+            {
+              "src": "media/ig-early-design/07.jpg",
+              "w": 936,
+              "h": 559
+            },
+            {
+              "src": "media/ig-early-design/08.jpg",
+              "w": 812,
+              "h": 812
+            },
+            {
+              "src": "media/ig-early-design/09.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/10.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/11.jpg",
+              "w": 1131,
+              "h": 1131
+            },
+            {
+              "src": "media/ig-early-design/12.jpg",
+              "w": 1236,
+              "h": 1545
+            },
+            {
+              "src": "media/ig-early-design/13.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/14.jpg",
+              "w": 1080,
+              "h": 1080
+            },
+            {
+              "src": "media/ig-early-design/15.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-design/16.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-design/17.jpg",
+              "w": 1080,
+              "h": 1237
+            },
+            {
+              "src": "media/ig-early-design/18.jpg",
+              "w": 1280,
+              "h": 1600
+            },
+            {
+              "src": "media/ig-early-design/19.jpg",
+              "w": 1440,
+              "h": 1440
+            },
+            {
+              "src": "media/ig-early-design/20.jpg",
+              "w": 1152,
+              "h": 1440
             }
           ]
         }
