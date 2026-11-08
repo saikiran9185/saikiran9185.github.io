@@ -87,3 +87,9 @@ body.contact-page {
 @media (prefers-reduced-motion: reduce) {
   .dial-card, .dial-card .acc-text, .dial-card .acc-fill, .dial-pill, .toast-mini { transition: none; }
 }
+
+/* contact row on the card: tappable */
+.dial-card .card-link { cursor: pointer; }
+.dial-card .card-link path { transition: opacity .15s ease; }
+.dial-card .card-link:hover path, .dial-card .card-link:focus-visible path { opacity: .6; }
+.dial-card .card-link:focus-visible rect { stroke: var(--acc); stroke-width: 2; rx: 6; }
