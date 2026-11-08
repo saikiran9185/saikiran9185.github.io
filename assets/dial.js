@@ -18,6 +18,7 @@
     ],
   };
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const T0 = performance.now();                       // entrance clock starts with the page, not with site.json
 
   // ---------- colour helpers ----------
   const hex2rgb = (h) => { h = h.replace('#', ''); return [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)); };
@@ -34,6 +35,11 @@
     if (c.every((v, i) => Math.abs(v - ORANGEC[i]) < 2)) return c;
     let x = c.slice();
     for (let k = 0; k < 40 && contrast(x, CREAMC) < 3; k++) x = x.map((v) => v * 0.94);
+    return x;
+  };
+  const strongOnCream = (c) => {             // big accent text (ART DIRECTOR): every accent incl. orange, to 3.5:1
+    let x = c.slice();
+    for (let k = 0; k < 40 && contrast(x, CREAMC) < 3.5; k++) x = x.map((v) => v * 0.95);
     return x;
   };
   const smooth = (t) => t * t * (3 - 2 * t);
@@ -62,7 +68,8 @@
     const COLS = P.map((p) => hex2rgb(p.color || ORANGE));
 
     const $ = (s) => root.querySelector(s);
-    $('.dial-hint').textContent = cfg.hint || DEFAULT.hint;
+    const status = $('.sr-status');
+    const say = (t) => { if (status) status.textContent = t; };
     const pill = $('.dial-pill'), pillText = $('.dial-pill span'), sub = $('.dial-sub'), idle = $('.dial-idle');
     idle.textContent = `${N} place${N === 1 ? '' : 's'} to find me`;
 
@@ -84,8 +91,8 @@
       }
     }
     const halo = el('circle', { cx: C, cy: C, r: 17, fill: '#fff', opacity: 0.18 }, svg);
-    const knobShade = el('circle', { cx: C, cy: C, r: 12.5, fill: '#000', opacity: 0.35 }, svg);
-    const knob = el('circle', { cx: C, cy: C, r: 11, fill: '#fff' }, svg);
+    const knobShade = el('ellipse', { cx: C, cy: C, rx: 12.5, ry: 12.5, fill: '#000', opacity: 0.35 }, svg);
+    const knob = el('ellipse', { cx: C, cy: C, rx: 11, ry: 11, fill: '#fff' }, svg);
 
     // platform icons = real links (tap/click/keyboard work without dragging)
     const icons = P.map((p, i) => {
@@ -120,16 +127,33 @@
       vx: 0, vy: 0, vp: 0,                            // knob + press velocities
       act: P.map(() => 0), vact: P.map(() => 0),      // icon activation 0..1
       sel: -1, raf: 0, last: 0,
+      rips: [],                                       // dot ripples {x, y, t0, amp, speed, life}
+      intro0: T0,                                     // page-load entrance start
+      tGo: 0, tReset: 0,                              // pending release timers
     };
 
     // ---------- motion: critically damped springs ----------
     // Starting from rest a spring accelerates gently and settles gently: ease-in-out without a fixed duration,
     // and it stays smooth when the target keeps moving under the finger.
-    const W_COLOUR = 9.5, W_KNOB = 16, W_PRESS = 11, W_ICON = 13;   // rad/s: lower = slower, softer
-    function spring(x, v, target, w, dt) {
-      const a = -2 * w * v - w * w * (x - target);
+    // v2 "juice": knob, press and icons are under-damped (z < 1) so they overshoot and wobble a little.
+    // Colour stays critically damped (z = 1): a bouncing colour reads as a glitch, not as play.
+    const W_COLOUR = 9.5, W_KNOB = 17, W_PRESS = 13, W_ICON = 15;   // rad/s: lower = slower, softer
+    const Z_KNOB = 0.5, Z_PRESS = 0.4, Z_ICON = 0.36;               // damping ratio: lower = bouncier
+    function spring(x, v, target, w, dt, z = 1) {
+      const a = -2 * z * w * v - w * w * (x - target);
       v += a * dt; x += v * dt;
       return [x, v];
+    }
+    function stepSpring(t, w = 17, z = 0.5) {     // 0 -> 1 with overshoot, t in seconds
+      if (t <= 0) return 0;
+      z = Math.min(z, 0.99);
+      const wd = w * Math.sqrt(1 - z * z);
+      return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + ((z * w) / wd) * Math.sin(wd * t));
+    }
+    function ripple(x, y, amp, speed = 420, life = 0.55) {
+      if (reduceMotion) return;
+      st.rips.push({ x, y, amp, speed, life, t0: performance.now() });
+      kick();
     }
     function springRGB(c, v, t, w, dt) {
       for (let i = 0; i < 3; i++) { const r = spring(c[i], v[i], t[i], w, dt); c[i] = r[0]; v[i] = r[1]; }
@@ -185,9 +209,9 @@
       const [tx, ty] = st.down ? pol(Math.min(st.dist, PR * 0.86), theta) : [C, C];
       if (snap) { st.hx = tx; st.hy = ty; st.press = st.down ? 1 : 0; }
       else {
-        [st.hx, st.vx] = spring(st.hx, st.vx, tx, W_KNOB, dt);
-        [st.hy, st.vy] = spring(st.hy, st.vy, ty, W_KNOB, dt);
-        [st.press, st.vp] = spring(st.press, st.vp, st.down ? 1 : 0, W_PRESS, dt);
+        [st.hx, st.vx] = spring(st.hx, st.vx, tx, W_KNOB, dt, Z_KNOB);
+        [st.hy, st.vy] = spring(st.hy, st.vy, ty, W_KNOB, dt, Z_KNOB);
+        [st.press, st.vp] = spring(st.press, st.vp, st.down ? 1 : 0, W_PRESS, dt, Z_PRESS);
       }
       const pr = Math.max(0, Math.min(1, st.press));
 
@@ -204,6 +228,9 @@
 
       // dots: fan from the centre toward the knob ∪ bloom under the knob
       const reach = PR;
+      const tIntro = (now - st.intro0) / 1000 - 0.22;                 // starts just after the card lands
+      const introOn = !snap && tIntro < 1.2;
+      st.rips = st.rips.filter((r) => (now - r.t0) / 1000 < r.life);
       for (const d of dots) {
         let p = 0, sw = 0, wave = 0;
         if (pr > 0.02) {
@@ -223,40 +250,63 @@
           }
           p *= pr;
         }
-        if (p > 0.05) {
-          d.n.setAttribute('fill', '#fff'); d.n.setAttribute('opacity', p.toFixed(2));
-          d.n.setAttribute('r', (4.4 + (3.2 * sw + 0.9 * wave) * pr).toFixed(2));
+        let rip = 0;                                                  // expanding rings of lit dots
+        for (const r of st.rips) {
+          const age = (now - r.t0) / 1000, R0 = age * r.speed, life = 1 - age / r.life;
+          const dd = Math.hypot(d.x - r.x, d.y - r.y);
+          rip = Math.max(rip, Math.exp(-((dd - R0) ** 2) / (2 * 11 * 11)) * life * r.amp);
+        }
+        const grow = introOn ? Math.max(0, stepSpring(tIntro - d.k * 0.045, 18, 0.42)) : 1;  // rings pop in from the centre
+        if (p > 0.05 || rip > 0.05) {
+          d.n.setAttribute('fill', '#fff'); d.n.setAttribute('opacity', Math.min(1, Math.max(p, rip * 0.85)).toFixed(2));
+          d.n.setAttribute('r', ((4.4 + (3.2 * sw + 0.9 * wave) * pr + 1.6 * rip) * grow).toFixed(2));
         } else {
-          d.n.setAttribute('fill', '#111'); d.n.setAttribute('opacity', 1); d.n.setAttribute('r', 4.2);
+          d.n.setAttribute('fill', '#111'); d.n.setAttribute('opacity', 1); d.n.setAttribute('r', (4.2 * grow).toFixed(2));
         }
       }
-      knob.setAttribute('cx', st.hx); knob.setAttribute('cy', st.hy);
-      knobShade.setAttribute('cx', st.hx); knobShade.setAttribute('cy', st.hy);
+      const kv = Math.hypot(st.vx, st.vy);
+      const stretch = snap ? 0 : Math.min(0.2, kv / 2400);
+      const kAng = kv > 1 ? (Math.atan2(st.vy, st.vx) * 180) / Math.PI : 0;
+      const kr = (11 + 4.5 * st.press) * (introOn ? Math.max(0, stepSpring(tIntro - 0.05, 18, 0.4)) : 1);
+      const rot = `rotate(${kAng.toFixed(1)} ${st.hx.toFixed(2)} ${st.hy.toFixed(2)})`;
+      for (const [n, extra] of [[knob, 0], [knobShade, 1.5]]) {
+        n.setAttribute('cx', st.hx); n.setAttribute('cy', st.hy);
+        n.setAttribute('rx', Math.max(0, (kr + extra) * (1 + stretch)).toFixed(2));
+        n.setAttribute('ry', Math.max(0, (kr + extra) / (1 + stretch)).toFixed(2));
+        n.setAttribute('transform', rot);
+      }
       halo.setAttribute('cx', st.hx); halo.setAttribute('cy', st.hy);
+      halo.setAttribute('r', Math.max(0, 17 + 9 * st.press).toFixed(2));
 
       // page accents follow the (eased) pad colour
       const acc = st.cm;
       root.style.setProperty('--acc', rgb2hex(acc));
       root.style.setProperty('--on-acc', onColour(acc));
       root.style.setProperty('--acc-text', rgb2hex(readableOnCream(acc)));
+      root.style.setProperty('--acc-strong', rgb2hex(strongOnCream(acc)));
 
       // icons: grow + fill smoothly instead of popping
       let iconsMoving = false;
       icons.forEach((ic, i) => {
         const target = i === sel ? (angDiff(theta, ANG[i]) < 12 ? 1 : 0.35) : 0;
         if (snap) st.act[i] = target;
-        else [st.act[i], st.vact[i]] = spring(st.act[i], st.vact[i], target, W_ICON, dt);
+        else [st.act[i], st.vact[i]] = spring(st.act[i], st.vact[i], target, W_ICON, dt, Z_ICON);
         const a = Math.max(0, Math.min(1, st.act[i]));
+        const popv = Math.max(0, (st.act[i] - 0.35) / 0.65);       // may pass 1: that's the overshoot
+        const inS = introOn ? Math.max(0, stepSpring(tIntro - 0.32 - i * 0.05, 17, 0.45)) : 1;
+        const lx = st.hx - ic.x, ly = st.hy - ic.y, ll = Math.hypot(lx, ly) || 1;
+        const cx = ic.x + (lx / ll) * 5 * popv, cy = ic.y + (ly / ll) * 5 * popv;
         if (Math.abs(st.act[i] - target) > 0.002 || Math.abs(st.vact[i]) > 0.002) iconsMoving = true;
         const full = Math.max(0, (a - 0.35) / 0.65);              // 0 until the platform is settled
-        ic.ring.setAttribute('r', (16 + 3 * full).toFixed(2));
+        ic.ring.setAttribute('cx', cx.toFixed(2)); ic.ring.setAttribute('cy', cy.toFixed(2));
+        ic.ring.setAttribute('r', Math.max(0, (16 + 4 * popv) * inS).toFixed(2));
         ic.ring.setAttribute('fill', rgb2hex(mixRGB([38, 38, 38], COLS[i], full)));
         ic.ring.setAttribute('stroke', rgb2hex(mixRGB([58, 58, 58], full > 0.5 ? WHITE : acc, Math.min(1, a / 0.35))));
         ic.ring.setAttribute('stroke-width', (1 + 0.8 * Math.min(1, a / 0.35)).toFixed(2));
         ic.g.setAttribute('fill', full > 0.5 ? onColour(COLS[i]) : '#fff');
         ic.g.setAttribute('opacity', (0.8 + 0.2 * full).toFixed(2));
-        const sz = 15 + 3 * full;
-        ic.g.setAttribute('transform', `translate(${(ic.x - sz / 2).toFixed(2)} ${(ic.y - sz / 2).toFixed(2)}) scale(${(sz / 24).toFixed(4)})`);
+        const sz = Math.max(0.01, (15 + 4 * popv) * inS);
+        ic.g.setAttribute('transform', `translate(${(cx - sz / 2).toFixed(2)} ${(cy - sz / 2).toFixed(2)}) scale(${(sz / 24).toFixed(4)})`);
       });
 
       const dist3 = (a, b) => Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) + Math.abs(a[2] - b[2]);
@@ -264,21 +314,28 @@
       const moving = snap ? false :
         Math.abs(tx - st.hx) + Math.abs(ty - st.hy) > 0.2 || Math.abs(st.vx) + Math.abs(st.vy) > 0.5 ||
         Math.abs((st.down ? 1 : 0) - st.press) > 0.005 || Math.abs(st.vp) > 0.01 ||
-        dist3(st.cm, tm) + dist3(st.c1, t1) + dist3(st.c2, t2) > 0.6 || speed3(st.vm) > 0.5 || iconsMoving;
+        dist3(st.cm, tm) + dist3(st.c1, t1) + dist3(st.c2, t2) > 0.6 || speed3(st.vm) > 0.5 || iconsMoving ||
+        st.rips.length > 0 || introOn;
       if (moving || st.down) st.raf = requestAnimationFrame(render);
       else { st.raf = 0; st.last = 0; }
     }
     const kick = () => { if (!st.raf) { st.last = 0; st.raf = requestAnimationFrame(render); } };
 
     const EASE_IO = 'cubic-bezier(.65,0,.35,1)';
+    const POP = CSS.supports('animation-timing-function', 'linear(0, 1)')
+      ? 'linear(0, 0.078, 0.262, 0.49, 0.712, 0.9, 1.037, 1.121, 1.158, 1.16, 1.138, 1.103, 1.066, 1.032, 1.005, 0.987, 0.977, 0.973, 0.975, 0.98, 0.986, 0.992, 0.997, 1.001, 1.003, 1.004, 1.004, 1.004, 1)'
+      : 'cubic-bezier(.34,1.56,.64,1)';
     let shown = null;
     function label() {
       const key = st.sel >= 0 ? 'p' + st.sel : (st.down ? 'drag' : 'idle');
-      if (key !== shown && !reduceMotion && shown !== null) {
+      if (key !== shown && !reduceMotion && shown !== null && key !== 'drag') {
         const elx = st.sel >= 0 ? pill : idle;
-        elx.animate([{ opacity: 0, transform: 'translateY(4px) scale(.96)' }, { opacity: 1, transform: 'none' }],
-          { duration: 340, easing: EASE_IO });
-        sub.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 340, easing: EASE_IO });
+        elx.getAnimations().forEach((a) => a.cancel());
+        sub.getAnimations().forEach((a) => a.cancel());
+        elx.animate([{ transform: 'translateY(5px) scale(.86)' }, { transform: 'none' }], { duration: 380, easing: POP });
+        elx.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 140, easing: 'ease-out' });
+        sub.animate([{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 300, delay: 60, easing: EASE_IO, fill: 'backwards' });
       }
       shown = key;
       if (st.sel >= 0) {
@@ -307,15 +364,17 @@
       if (st.dist > 2) st.theta = (Math.atan2(dy, dx) * 180) / Math.PI;
       const prev = st.sel;
       st.sel = st.dist < PR * 0.22 ? -1 : nearest(st.theta);
-      if (st.sel !== prev) { if (st.sel >= 0) tick(false); label(); }
+      if (st.sel !== prev) { if (st.sel >= 0) { tick(false); ripple(st.hx, st.hy, 0.45, 360, 0.4); } label(); }
       kick();
     }
     svg.addEventListener('pointerdown', (e) => {
       const [x, y] = toLocal(e);
       if (Math.hypot(x - C, y - C) > RING + 8) return;     // icons outside the ring stay normal links
       e.preventDefault();
+      clearTimeout(st.tGo); clearTimeout(st.tReset);
       svg.setPointerCapture(e.pointerId);
       st.down = true; root.classList.add('is-dragging');
+      ripple(x, y, 0.55, 380, 0.45);
       update(e); label();
     });
     svg.addEventListener('pointermove', (e) => { if (st.down) update(e); });
@@ -324,12 +383,16 @@
       st.down = false; root.classList.remove('is-dragging');
       const sel = st.sel;
       st.sel = cancel ? -1 : sel;
-      if (!cancel && sel >= 0) { tick(true); setTimeout(() => go(P[sel]), reduceMotion ? 0 : 140); }
-      setTimeout(() => { st.sel = -1; label(); kick(); }, reduceMotion ? 0 : 420);
+      if (!cancel && sel >= 0) { tick(true); ripple(st.hx, st.hy, 1, 520, 0.6); say(`Opening ${P[sel].name}`); st.tGo = setTimeout(() => go(P[sel]), reduceMotion ? 0 : 220); }
+      st.tReset = setTimeout(() => { st.sel = -1; label(); kick(); }, reduceMotion ? 0 : 420);
       kick();
     };
     svg.addEventListener('pointerup', (e) => end(e, false));
     svg.addEventListener('pointercancel', (e) => end(e, true));
+    // a press that never gets its pointerup (app switch, tab hidden, capture lost) must not leave the dial stuck
+    svg.addEventListener('lostpointercapture', (e) => end(e, true));   // after a normal pointerup st.down is already false
+    window.addEventListener('blur', (e) => end(e, true));
+    document.addEventListener('visibilitychange', (e) => { if (document.hidden) end(e, true); });
 
     // keyboard: arrows pick a platform on the pad, Enter opens it
     svg.setAttribute('tabindex', '0');
@@ -341,13 +404,12 @@
       const dir = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1;
       st.sel = st.sel < 0 ? 0 : (st.sel + dir + N) % N;
       st.theta = ANG[st.sel]; label(); kick();
+      say(`${P[st.sel].name}, ${P[st.sel].label || ''}. Press Enter to open.`);
     });
 
     label();
     render();
   }
 
-  // card artwork (outlined vector; accents recolour via CSS variables)
-  fetch('/assets/dial/card.svg').then((r) => r.text()).then((t) => { root.querySelector('.dial-card').innerHTML = t; }).catch(() => {});
   fetch('/content/site.json', { cache: 'no-cache' }).then((r) => r.json()).then((d) => init(d.dial)).catch(() => init(DEFAULT));
 })();

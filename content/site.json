@@ -2371,18 +2371,18 @@
         "label": "behance.net/chepurikiran"
       },
       {
-        "name": "LinkedIn",
-        "icon": "linkedin",
-        "color": "#0A66C2",
-        "url": "",
-        "label": ""
-      },
-      {
         "name": "Website",
         "icon": "globe",
         "color": "#FF8E48",
         "url": "/",
         "label": "saikiran9185.github.io"
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "color": "#0A66C2",
+        "url": "https://www.linkedin.com/in/saikiran-chepuri-749a7230b/",
+        "label": "in/saikiran-chepuri"
       },
       {
         "name": "Mail",
