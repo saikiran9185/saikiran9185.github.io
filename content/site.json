@@ -2359,5 +2359,59 @@
         }
       ]
     }
-  ]
+  ],
+  "dial": {
+    "hint": "Press, drag toward where you want to go, release to open",
+    "platforms": [
+      {
+        "name": "Behance",
+        "icon": "behance",
+        "color": "#1769FF",
+        "url": "https://www.behance.net/chepurikiran",
+        "label": "behance.net/chepurikiran"
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "color": "#0A66C2",
+        "url": "",
+        "label": ""
+      },
+      {
+        "name": "Website",
+        "icon": "globe",
+        "color": "#FF8E48",
+        "url": "/",
+        "label": "saikiran9185.github.io"
+      },
+      {
+        "name": "Mail",
+        "icon": "mail",
+        "color": "#EA4335",
+        "url": "mailto:saikiran9185@gmail.com",
+        "label": "saikiran9185@gmail.com"
+      },
+      {
+        "name": "Spotify",
+        "icon": "spotify",
+        "color": "#1DB954",
+        "url": "",
+        "label": ""
+      },
+      {
+        "name": "Pinterest",
+        "icon": "pinterest",
+        "color": "#E60023",
+        "url": "",
+        "label": ""
+      },
+      {
+        "name": "Instagram",
+        "icon": "instagram",
+        "color": "#E1306C",
+        "url": "https://www.instagram.com/saikiran_chepuri/",
+        "label": "@saikiran_chepuri"
+      }
+    ]
+  }
 }

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact me — Saikiran Chepuri</title>
+<meta name="description" content="Saikiran Chepuri, Art Director. Behance, Instagram, mail and portfolio in one dial: press, drag toward where you want to go, release to open.">
+<meta name="theme-color" content="#161616">
+<meta property="og:title" content="Saikiran Chepuri — Contact me">
+<meta property="og:description" content="Art Director. Drag the dial to find me.">
+<meta property="og:url" content="https://saikiran9185.github.io/contact/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/dial.css">
+</head>
+<body class="contact-page">
+<main class="dial" id="dial" aria-label="Saikiran Chepuri — contact me">
+  <div class="dial-top">
+    <a class="dial-round" href="/" aria-label="Portfolio home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg></a>
+    <button class="dial-round" type="button" id="dialShare" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button>
+  </div>
+  <div class="dial-card" role="img" aria-label="Bio card: Saikiran Chepuri, Art Director"></div>
+  <p class="dial-hint"></p>
+  <div class="dial-head" aria-live="polite">
+    <p class="dial-idle"></p>
+    <span class="dial-pill" hidden><span></span></span>
+    <p class="dial-sub"></p>
+  </div>
+  <div class="dial-pad"></div>
+  <p class="dial-foot">Tap an icon, or drag on the dial. <a href="/">saikiran9185.github.io</a></p>
+</main>
+<aside class="dial-qr" aria-label="View on mobile"><span>View on mobile</span><img src="/assets/dial/qr.svg" alt="QR code for https://saikiran9185.github.io/contact/" width="104" height="104"></aside>
+<div class="toast-mini" id="dialToast" role="status" aria-live="polite"></div>
+<script src="/assets/dial.js"></script>
+<script>
+document.getElementById('dialShare').addEventListener('click', async () => {
+  const url = 'https://saikiran9185.github.io/contact/', t = document.getElementById('dialToast');
+  try {
+    if (navigator.share) { await navigator.share({ title: 'Saikiran Chepuri — Contact me', url }); return; }
+    await navigator.clipboard.writeText(url); t.textContent = 'Link copied';
+  } catch (e) { if (e && e.name === 'AbortError') return; t.textContent = url; }
+  t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 1800);
+});
+</script>
+</body>
+</html>
