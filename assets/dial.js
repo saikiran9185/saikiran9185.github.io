@@ -116,8 +116,24 @@
       hx: C, hy: C,                               // knob (smoothed)
       press: 0,                                   // 0..1 how "on" the spread is
       c1: ORANGEC.slice(), cm: ORANGEC.slice(), c2: ORANGEC.slice(),
-      sel: -1, raf: 0,
+      v1: [0, 0, 0], vm: [0, 0, 0], v2: [0, 0, 0],   // colour velocities (springs)
+      vx: 0, vy: 0, vp: 0,                            // knob + press velocities
+      act: P.map(() => 0), vact: P.map(() => 0),      // icon activation 0..1
+      sel: -1, raf: 0, last: 0,
     };
+
+    // ---------- motion: critically damped springs ----------
+    // Starting from rest a spring accelerates gently and settles gently: ease-in-out without a fixed duration,
+    // and it stays smooth when the target keeps moving under the finger.
+    const W_COLOUR = 9.5, W_KNOB = 16, W_PRESS = 11, W_ICON = 13;   // rad/s: lower = slower, softer
+    function spring(x, v, target, w, dt) {
+      const a = -2 * w * v - w * w * (x - target);
+      v += a * dt; x += v * dt;
+      return [x, v];
+    }
+    function springRGB(c, v, t, w, dt) {
+      for (let i = 0; i < 3; i++) { const r = spring(c[i], v[i], t[i], w, dt); c[i] = r[0]; v[i] = r[1]; }
+    }
 
     // ---------- feedback: haptic + soft click ----------
     let actx;
@@ -146,28 +162,40 @@
     }
 
     // ---------- render one frame ----------
-    function render() {
+    function render(now) {
+      now = now || performance.now();
+      const dt = Math.min(1 / 30, st.last ? (now - st.last) / 1000 : 1 / 60);
+      st.last = now;
+      const snap = reduceMotion;
       const sel = st.sel, theta = st.theta;
-      // target colours
+
+      // target colours (pure at a wedge centre, blending toward the neighbour across the border)
       let t1, tm, t2;
-      if (sel < 0) { t1 = tm = t2 = sel === -2 ? colourAt(theta) : ORANGEC; }
+      if (sel < 0) { t1 = tm = t2 = ORANGEC; }
       else {
         tm = colourAt(theta);
-        const lock = 1 - Math.min(1, angDiff(theta, ANG[sel]) / 12);      // 1 = settled on one platform
+        const lock = 1 - Math.min(1, angDiff(theta, ANG[sel]) / 12);
         t1 = mixRGB(colourAt(theta + 180 / N), tm, lock);
         t2 = mixRGB(colourAt(theta - 180 / N), tm, lock);
       }
-      const ease = reduceMotion ? 1 : 0.2;
-      st.c1 = mixRGB(st.c1, t1, ease); st.cm = mixRGB(st.cm, tm, ease); st.c2 = mixRGB(st.c2, t2, ease);
+      if (snap) { st.c1 = t1.slice(); st.cm = tm.slice(); st.c2 = t2.slice(); }
+      else { springRGB(st.c1, st.v1, t1, W_COLOUR, dt); springRGB(st.cm, st.vm, tm, W_COLOUR, dt); springRGB(st.c2, st.v2, t2, W_COLOUR, dt); }
 
-      // knob follows the finger (soft spring), returns to centre on release
+      // knob eases toward the finger, and back to the centre on release
       const [tx, ty] = st.down ? pol(Math.min(st.dist, PR * 0.86), theta) : [C, C];
-      const k = reduceMotion ? 1 : (st.down ? 0.45 : 0.18);
-      st.hx += (tx - st.hx) * k; st.hy += (ty - st.hy) * k;
-      st.press += ((st.down ? 1 : 0) - st.press) * (reduceMotion ? 1 : 0.22);
+      if (snap) { st.hx = tx; st.hy = ty; st.press = st.down ? 1 : 0; }
+      else {
+        [st.hx, st.vx] = spring(st.hx, st.vx, tx, W_KNOB, dt);
+        [st.hy, st.vy] = spring(st.hy, st.vy, ty, W_KNOB, dt);
+        [st.press, st.vp] = spring(st.press, st.vp, st.down ? 1 : 0, W_PRESS, dt);
+      }
+      const pr = Math.max(0, Math.min(1, st.press));
 
-      // gradient along the tangent at theta (c1 = counter-clockwise neighbour side)
-      const phi = theta + 90;
+      // the spread and the blend follow the knob's eased angle, so they swing instead of jumping
+      const hr = Math.hypot(st.hx - C, st.hy - C);
+      const aTheta = hr > 3 ? (Math.atan2(C - st.hy, st.hx - C) * 180) / Math.PI : theta;
+
+      const phi = aTheta + 90;
       const [gx1, gy1] = pol(PR, phi), [gx2, gy2] = pol(PR, phi + 180);
       grad.setAttribute('x1', gx1); grad.setAttribute('y1', gy1); grad.setAttribute('x2', gx2); grad.setAttribute('y2', gy2);
       stops[0].setAttribute('stop-color', rgb2hex(st.c1));
@@ -175,13 +203,12 @@
       stops[2].setAttribute('stop-color', rgb2hex(st.c2));
 
       // dots: fan from the centre toward the knob ∪ bloom under the knob
-      const hr = Math.hypot(st.hx - C, st.hy - C);
-      const reach = PR, pr = st.press;
+      const reach = PR;
       for (const d of dots) {
         let p = 0, sw = 0, wave = 0;
         if (pr > 0.02) {
           if (d.k > 0 && hr > 4 && d.r <= reach + SP * 0.5) {
-            const da = rad(angDiff(d.a, theta));
+            const da = rad(angDiff(d.a, aTheta));
             if (da < Math.PI / 2) {
               const along = d.r * Math.cos(da), perp = d.r * Math.sin(da);
               const width = 7 + along * Math.tan(rad(21.9));       // same fan angle as the approved FINAL frames
@@ -207,32 +234,53 @@
       knobShade.setAttribute('cx', st.hx); knobShade.setAttribute('cy', st.hy);
       halo.setAttribute('cx', st.hx); halo.setAttribute('cy', st.hy);
 
-      // page accents follow the pad colour
+      // page accents follow the (eased) pad colour
       const acc = st.cm;
       root.style.setProperty('--acc', rgb2hex(acc));
       root.style.setProperty('--on-acc', onColour(acc));
       root.style.setProperty('--acc-text', rgb2hex(readableOnCream(acc)));
 
-      // icons
+      // icons: grow + fill smoothly instead of popping
+      let iconsMoving = false;
       icons.forEach((ic, i) => {
-        const on = i === sel && angDiff(theta, ANG[i]) < 12;
-        ic.ring.setAttribute('r', on ? 19 : 16);
-        ic.ring.setAttribute('fill', on ? P[i].color : '#262626');
-        ic.ring.setAttribute('stroke', on ? '#fff' : (i === sel ? rgb2hex(acc) : '#3a3a3a'));
-        ic.ring.setAttribute('stroke-width', on || i === sel ? 1.8 : 1);
-        ic.g.setAttribute('fill', on ? onColour(COLS[i]) : '#fff');
-        ic.g.setAttribute('opacity', on ? 1 : 0.8);
-        const s = on ? 18 : 15;
-        ic.g.setAttribute('transform', `translate(${ic.x - s / 2} ${ic.y - s / 2}) scale(${s / 24})`);
+        const target = i === sel ? (angDiff(theta, ANG[i]) < 12 ? 1 : 0.35) : 0;
+        if (snap) st.act[i] = target;
+        else [st.act[i], st.vact[i]] = spring(st.act[i], st.vact[i], target, W_ICON, dt);
+        const a = Math.max(0, Math.min(1, st.act[i]));
+        if (Math.abs(st.act[i] - target) > 0.002 || Math.abs(st.vact[i]) > 0.002) iconsMoving = true;
+        const full = Math.max(0, (a - 0.35) / 0.65);              // 0 until the platform is settled
+        ic.ring.setAttribute('r', (16 + 3 * full).toFixed(2));
+        ic.ring.setAttribute('fill', rgb2hex(mixRGB([38, 38, 38], COLS[i], full)));
+        ic.ring.setAttribute('stroke', rgb2hex(mixRGB([58, 58, 58], full > 0.5 ? WHITE : acc, Math.min(1, a / 0.35))));
+        ic.ring.setAttribute('stroke-width', (1 + 0.8 * Math.min(1, a / 0.35)).toFixed(2));
+        ic.g.setAttribute('fill', full > 0.5 ? onColour(COLS[i]) : '#fff');
+        ic.g.setAttribute('opacity', (0.8 + 0.2 * full).toFixed(2));
+        const sz = 15 + 3 * full;
+        ic.g.setAttribute('transform', `translate(${(ic.x - sz / 2).toFixed(2)} ${(ic.y - sz / 2).toFixed(2)}) scale(${(sz / 24).toFixed(4)})`);
       });
 
-      const moving = Math.abs(tx - st.hx) + Math.abs(ty - st.hy) > 0.3 || Math.abs((st.down ? 1 : 0) - st.press) > 0.01 ||
-        Math.abs(st.cm[0] - tm[0]) + Math.abs(st.cm[1] - tm[1]) + Math.abs(st.cm[2] - tm[2]) > 1.5;
-      st.raf = moving || st.down ? requestAnimationFrame(render) : 0;
+      const dist3 = (a, b) => Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) + Math.abs(a[2] - b[2]);
+      const speed3 = (v) => Math.abs(v[0]) + Math.abs(v[1]) + Math.abs(v[2]);
+      const moving = snap ? false :
+        Math.abs(tx - st.hx) + Math.abs(ty - st.hy) > 0.2 || Math.abs(st.vx) + Math.abs(st.vy) > 0.5 ||
+        Math.abs((st.down ? 1 : 0) - st.press) > 0.005 || Math.abs(st.vp) > 0.01 ||
+        dist3(st.cm, tm) + dist3(st.c1, t1) + dist3(st.c2, t2) > 0.6 || speed3(st.vm) > 0.5 || iconsMoving;
+      if (moving || st.down) st.raf = requestAnimationFrame(render);
+      else { st.raf = 0; st.last = 0; }
     }
-    const kick = () => { if (!st.raf) st.raf = requestAnimationFrame(render); };
+    const kick = () => { if (!st.raf) { st.last = 0; st.raf = requestAnimationFrame(render); } };
 
+    const EASE_IO = 'cubic-bezier(.65,0,.35,1)';
+    let shown = null;
     function label() {
+      const key = st.sel >= 0 ? 'p' + st.sel : (st.down ? 'drag' : 'idle');
+      if (key !== shown && !reduceMotion && shown !== null) {
+        const elx = st.sel >= 0 ? pill : idle;
+        elx.animate([{ opacity: 0, transform: 'translateY(4px) scale(.96)' }, { opacity: 1, transform: 'none' }],
+          { duration: 340, easing: EASE_IO });
+        sub.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 340, easing: EASE_IO });
+      }
+      shown = key;
       if (st.sel >= 0) {
         const p = P[st.sel];
         pill.hidden = false; idle.hidden = true;
