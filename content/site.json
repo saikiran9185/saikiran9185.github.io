@@ -2358,6 +2358,280 @@
           ]
         }
       ]
+    },
+    {
+      "id": "3d-food-cart",
+      "title": "Street Food Cart",
+      "year": 2026,
+      "cats": [
+        "3D & Motion"
+      ],
+      "one": "An Indian street-food cart, lit by bulbs at dusk.",
+      "role": "3D modelling, materials, lighting, rendering",
+      "tools": "Blender",
+      "links": [],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/3d-food-cart/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "image",
+          "src": "media/3d-food-cart/02.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "About",
+          "body": "A street-food cart with a cloth awning, hanging bulbs, steamers, clay pots and plates of momos. I wanted the warm bulb light against a dark evening sky.\nMade for Introduction to 3D Design, semester 6, B.Design."
+        },
+        {
+          "type": "image",
+          "src": "media/3d-food-cart/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/3d-food-cart/02.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-food-cart/03.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-food-cart/04.jpg",
+              "w": 1600,
+              "h": 900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-tv-cabinet",
+      "title": "TV Cabinet",
+      "year": 2026,
+      "cats": [
+        "3D & Motion"
+      ],
+      "one": "A living-room TV wall with walnut storage and shelves.",
+      "role": "3D modelling, materials, lighting, rendering",
+      "tools": "Blender",
+      "links": [],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/3d-tv-cabinet/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "image",
+          "src": "media/3d-tv-cabinet/02.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "About",
+          "body": "An interior scene: a walnut TV cabinet, floating shelves and box shelves, with soft window light coming across the wall.\nMade for Introduction to 3D Design, semester 6, B.Design."
+        },
+        {
+          "type": "image",
+          "src": "media/3d-tv-cabinet/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/3d-tv-cabinet/02.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-tv-cabinet/03.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-tv-cabinet/04.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-tv-cabinet/05.jpg",
+              "w": 1600,
+              "h": 900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-keyboard",
+      "title": "Keyboard",
+      "year": 2026,
+      "cats": [
+        "3D & Motion"
+      ],
+      "one": "A 60% keyboard, modelled key by key.",
+      "role": "3D modelling, materials, lighting, rendering",
+      "tools": "Blender, Illustrator",
+      "links": [],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/3d-keyboard/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "image",
+          "src": "media/3d-keyboard/02.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "About",
+          "body": "A compact 60% keyboard. I drew the key legends in Illustrator and brought them into Blender, then rendered it on a cutting mat.\nMade for Introduction to 3D Design, semester 6, B.Design."
+        },
+        {
+          "type": "image",
+          "src": "media/3d-keyboard/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/3d-keyboard/02.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-keyboard/03.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-keyboard/04.jpg",
+              "w": 1600,
+              "h": 900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-toy-bunny",
+      "title": "Plush Bunny",
+      "year": 2026,
+      "cats": [
+        "3D & Motion"
+      ],
+      "one": "A soft plush toy rendered with fur.",
+      "role": "3D modelling, materials, lighting, rendering",
+      "tools": "Blender",
+      "links": [],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/3d-toy-bunny/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "image",
+          "src": "media/3d-toy-bunny/02.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "About",
+          "body": "A plush bunny toy, modelled after a Miffy plush, with a fur hair system and soft studio light. I also prepared a version for 3D printing.\nMade for Introduction to 3D Design, semester 6, B.Design."
+        },
+        {
+          "type": "image",
+          "src": "media/3d-toy-bunny/01.jpg",
+          "w": 1600,
+          "h": 900
+        },
+        {
+          "type": "gallery",
+          "items": [
+            {
+              "src": "media/3d-toy-bunny/02.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-toy-bunny/03.jpg",
+              "w": 1600,
+              "h": 900
+            },
+            {
+              "src": "media/3d-toy-bunny/04.jpg",
+              "w": 1600,
+              "h": 900
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3d-green-building",
+      "title": "Stone House",
+      "year": 2026,
+      "cats": [
+        "3D & Motion"
+      ],
+      "one": "A half-timbered stone house with tiled roofs.",
+      "role": "3D modelling, materials, lighting, rendering",
+      "tools": "Blender",
+      "links": [],
+      "tiles": [
+        {
+          "type": "image",
+          "src": "media/3d-green-building/01.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "title": "About",
+          "body": "A stone and timber house with scalloped roof tiles, dormer windows and a chimney spire.\nMade for Introduction to 3D Design, semester 6, B.Design."
+        },
+        {
+          "type": "image",
+          "src": "media/3d-green-building/01.jpg",
+          "w": 1600,
+          "h": 900
+        }
+      ]
     }
   ],
   "dial": {
